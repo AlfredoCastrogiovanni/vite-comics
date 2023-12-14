@@ -1,17 +1,19 @@
 <template>
     <header>
-        <div class="imgWrapper">
-            <img src="../assets/img/logoDC.PNG" alt="Logo DC">
+        <div class="wrapper">
+            <div class="imgWrapper">
+                <img src="../assets/img/logoDC.PNG" alt="Logo DC">
+            </div>
+            <nav>
+                <ul>
+                    <li v-for="link in navLinks" :class=" (link.active) ? 'active' : '' ">
+                        <a :href="link.href">
+                            {{ link.name }}
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <li v-for="link in navLinks" :class=" (link.active) ? 'active' : '' ">
-                    <a :href="link.href">
-                        {{ link.name }}
-                    </a>
-                </li>
-            </ul>
-        </nav>
     </header>
 </template>
 
@@ -84,34 +86,38 @@
     header {
         width: 100%;
         height: 110px;
-        @include flex();
+        // @include flex();
 
-        div.imgWrapper {
-            width: 40%;
-            @include flex(row, center, center);
+        div.wrapper {
+            width: $wrapper-width;
+            margin: 0 auto;
+            @include flex(row, space-between);
+            div.imgWrapper {
+                @include flex(row, center, center);
 
-            img {
-                height: 80%;
+                img {
+                    height: 80%;
+                }
             }
-        }
 
-        nav ul {
-            height: 100%;
-            @include flex(row, center);
-            list-style: none;
+            nav ul {
+                height: 100%;
+                @include flex(row, center);
+                list-style: none;
 
-            li {
-                line-height: 110px;
-                margin-right: 2rem;
-                text-transform: uppercase;
-                font-weight: bold;
-                font-size: 0.9rem;
+                li {
+                    line-height: 110px;
+                    margin-right: 2rem;
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    font-size: 0.9rem;
 
-                &.active {
-                    border-bottom: 5px solid $main-color;
+                    &.active {
+                        border-bottom: 5px solid $main-color;
 
-                    a {
-                        color: $main-color;
+                        a {
+                            color: $main-color;
+                        }
                     }
                 }
             }
