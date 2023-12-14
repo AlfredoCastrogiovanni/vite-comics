@@ -1,0 +1,120 @@
+<template>
+    <header>
+        <div class="imgWrapper">
+            <img src="../assets/img/logoDC.PNG" alt="Logo DC">
+        </div>
+        <nav>
+            <ul>
+                <li v-for="link in navLinks" :class=" (link.active) ? 'active' : '' ">
+                    <a :href="link.href">
+                        {{ link.name }}
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+</template>
+
+<script>
+    export default {
+        name: "AppHeader",
+        data() {
+            return {
+                navLinks: [
+                    {
+                        name: "Characters",
+                        href: "#",
+                        active: false
+                    },
+                    {
+                        name: "Comics",
+                        href: "#",
+                        active: true
+                    },
+                    {
+                        name: "Movies",
+                        href: "#",
+                        active: false
+                    },
+                    {
+                        name: "Tv",
+                        href: "#",
+                        active: false
+                    },
+                    {
+                        name: "Games",
+                        href: "#",
+                        active: false
+                    },
+                    {
+                        name: "Tv",
+                        href: "#",
+                        active: false
+                    },
+                    {
+                        name: "Collectibles",
+                        href: "#",
+                        active: false
+                    },
+                    {
+                        name: "Videos",
+                        href: "#",
+                        active: false
+                    },
+                    {
+                        name: "News",
+                        href: "#",
+                        active: false
+                    },
+                    {
+                        name: "Shop",
+                        href: "#",
+                        active: false
+                    },
+                ]
+            }
+        }
+    }
+</script>
+
+<style lang="scss" scoped>
+    @use "../styles/partials/variables" as *;
+    @use "../styles/partials/mixins" as *;
+
+    header {
+        width: 100%;
+        height: 110px;
+        @include flex();
+
+        div.imgWrapper {
+            width: 40%;
+            @include flex(row, center, center);
+
+            img {
+                height: 80%;
+            }
+        }
+
+        nav ul {
+            height: 100%;
+            @include flex(row, center);
+            list-style: none;
+
+            li {
+                line-height: 110px;
+                margin-right: 2rem;
+                text-transform: uppercase;
+                font-weight: bold;
+                font-size: 0.9rem;
+
+                &.active {
+                    border-bottom: 5px solid $main-color;
+
+                    a {
+                        color: $main-color;
+                    }
+                }
+            }
+        }
+    }
+</style>
