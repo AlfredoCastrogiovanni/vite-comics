@@ -2,7 +2,7 @@
     <header>
         <div class="wrapper">
             <div class="imgWrapper">
-                <img src="../assets/img/logoDC.PNG" alt="Logo DC">
+                <img src="../assets/img/dc-logo.png" alt="Logo DC">
             </div>
             <nav>
                 <ul>
@@ -96,12 +96,12 @@
                 @include flex(row, center, center);
 
                 img {
-                    height: 80%;
+                    height: 65%;
                 }
             }
 
             nav ul {
-                height: 100%;
+                height: calc(100% - 5px);
                 @include flex(row, center);
                 list-style: none;
 
