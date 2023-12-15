@@ -9,6 +9,9 @@
                 :type="comic.type"
             />
         </div>
+        <div class="buttonWrapper">
+            <button>Load More</button>
+        </div>
     </div>
 </template>
 
@@ -125,5 +128,19 @@
             @include flex(row, center, stretch);
             flex-wrap: wrap;
         }
+
+        .buttonWrapper {
+            text-align: center;
+            padding: 1.5rem 0;
+
+            button {
+                border: none;
+                background-color: $main-color;
+                padding: 0.8rem 3rem;
+                color: white;
+                text-transform: uppercase;
+            }
+        }
+        
     }
 </style>
