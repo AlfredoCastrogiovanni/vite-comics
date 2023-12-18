@@ -108,7 +108,6 @@
     @use "../styles/partials/variables" as *;
     @use "../styles/partials/mixins" as *;
 
-
     .listComics {
         width: $wrapper-width;
         margin: 0 auto;

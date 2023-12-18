@@ -86,7 +86,6 @@
     header {
         width: 100%;
         height: 110px;
-        // @include flex();
 
         div.wrapper {
             width: $wrapper-width;

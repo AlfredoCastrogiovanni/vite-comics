@@ -46,18 +46,5 @@
             text-transform: uppercase;
             font-size: 0.8rem;
         }
-        // .imgwrapper {
-        //     width: 300px;
-        //     height: 300px;
-
-        //     img {
-        //         width: 100%;
-        //         height: 100%;
-        //         object-fit: cover;
-        //         object-position: center;
-        //     }
-        // }
-
-
     }
 </style>
